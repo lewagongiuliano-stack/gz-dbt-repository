@@ -9,7 +9,7 @@ sales AS (
   SELECT
     date_date,
     orders_id,
-    pdt_id as product_id,
+    pdt_id,
     revenue,
     quantity
   FROM {{ ref("stg_raw_data__sales_data") }}

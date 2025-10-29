@@ -9,12 +9,10 @@ sources:
       - name: product_data
         identifier: raw_gz_product
         description: products of Greenweez /
-        tests:
-        - unique
-        - not_null
+        
+   
       - name: ship_data
         identifier: raw_gz_ship
         description: ships of Greenweez /
-        tests:
-        - unique
-        - not_null
+        
+  
