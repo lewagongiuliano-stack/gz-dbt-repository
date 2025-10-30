@@ -33,3 +33,39 @@ models:
       - name: shipping_fee
       - name: logcost
       - name: ship_cost
+
+  - name: stg_gz_raw_data__raw_gz_adwords
+    description: "Marketing adwords data."
+    columns:
+      - name: date_date
+      - name: paid_source
+      - name: campaign_key
+        tests: [not_null]
+      - name: campaign_name
+
+  - name: stg_gz_raw_data__raw_gz_facebook
+    description: "Marketing facebook data."
+    columns:
+      - name: date_date
+      - name: paid_source
+      - name: campaign_key
+        tests: [not_null]
+      - name: campaign_name
+
+  - name: stg_gz_raw_data__raw_gz_criteo
+    description: "Marketing criteo data."
+    columns:
+      - name: date_date
+      - name: paid_source
+      - name: campaign_key
+        tests: [not_null]
+      - name: campaign_name
+
+  - name: stg_gz_raw_data__raw_gz_bing
+    description: "Marketing bing data."
+    columns:
+      - name: date_date
+      - name: paid_source
+      - name: campaign_key
+        tests: [not_null]
+      - name: campaign_name

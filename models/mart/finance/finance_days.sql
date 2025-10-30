@@ -12,6 +12,7 @@ WITH
             s.revenue,
             s.quantity,
             s.purchase_cost,
+            s.margin,
             
             -- Metrics from int_orders_operational (order level)
             o.operational_margin,
@@ -30,7 +31,7 @@ WITH
 SELECT
     -- Date Granularity
     date_date,
-
+    margin,
     -- Total number of transactions (now 'orders_id' is available!)
     COUNT(DISTINCT orders_id) AS total_transactions, 
     
@@ -38,6 +39,7 @@ SELECT
     SUM(revenue) AS total_revenue,
     SUM(purchase_cost) AS total_purchase_cost,
     SUM(operational_margin) AS operational_margin,
+    
     SUM(shipping_fee) AS total_shipping_fees,
     SUM(log_cost) AS total_log_costs,
     
@@ -50,6 +52,7 @@ SELECT
 FROM 
     intermediate_data
 GROUP BY 
-    date_date
+    date_date,
+    margin
 ORDER BY 
     date_date DESC
