@@ -1,0 +1,36 @@
+version: 2
+
+# (Your existing 'sources' block goes here)
+
+models:
+  # --- Intermediate Models ---
+  - name: int_sales_margin
+    description: "Calculates the margin and purchase cost for every line item sale."
+    columns:
+      - name: pdt_id
+        description: "Primary key for the product sold."
+      - name: revenue
+        tests:
+          - not_null
+      - name: purchase_cost
+        tests:
+          - not_null
+      - name: quantity
+        description: "Number of units sold."
+        tests:
+          - not_null
+
+  - name: int_orders_operational
+    description: "Aggregates margin and calculates operational margin at the order level."
+    columns:
+      - name: orders_id
+        description: "Primary key for the order."
+        tests:
+          - unique
+          - not_null
+      - name: operational_margin
+        tests:
+          - not_null
+      - name: shipping_fee
+        tests:
+          - not_null

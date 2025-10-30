@@ -1,3 +1,4 @@
+
 WITH 
     intermediate_data AS (
         SELECT
