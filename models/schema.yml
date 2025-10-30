@@ -1,18 +1,9 @@
 version: 2
 sources:
-  - name: raw_data
-    schema: gz_raw_data
+  - name: gz_raw_data
     tables:
-      - name: sales_data
-        identifier: raw_gz_sales
-        description: sales of Greenweez / we have on row per product_id found in each orders_id
-      - name: product_data
-        identifier: raw_gz_product
-        description: products of Greenweez /
-        
-   
-      - name: ship_data
-        identifier: raw_gz_ship
-        description: ships of Greenweez /
+      - name: raw_gz_sales
+      - name: raw_gz_product
+      - name: raw_gz_ship
         
   
