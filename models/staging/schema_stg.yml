@@ -14,6 +14,10 @@ models:
   - name: stg_gz_raw_data__raw_gz_sales
     description: "Cleaned and renamed version of raw_gz_sales."
     columns:
+      - name: pk
+        tests: 
+        - not_null
+        - unique
       - name: date_date
         tests: [not_null] 
       - name: revenue

@@ -10,6 +10,7 @@ renamed as (
 
     select
         date_date,
+        concat(orders_id || pdt_id) as pk,
         orders_id,
         pdt_id as products_id,
         revenue,
