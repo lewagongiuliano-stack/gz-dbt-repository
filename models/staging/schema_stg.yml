@@ -1,0 +1,35 @@
+version: 2
+models:
+  - name: stg_gz_raw_data__raw_gz_product
+    description: "Cleaned and renamed version of raw_gz_product."
+    columns:
+      - name: products_id
+        description: "Product primary key."
+        tests:
+          - not_null
+          - unique
+      - name: purchase_price
+        description: "Purchase price from raw data."
+
+  - name: stg_gz_raw_data__raw_gz_sales
+    description: "Cleaned and renamed version of raw_gz_sales."
+    columns:
+      - name: pk
+        tests: 
+        - not_null
+        - unique
+      - name: date_date
+        tests: [not_null] 
+      - name: revenue
+        tests: [not_null]
+      - name: quantity
+        tests: [not_null]
+
+  - name: stg_gz_raw_data__raw_gz_ship
+    description: "Cleaned and renamed version of raw_gz_ship."
+    columns:
+      - name: orders_id
+        tests: [not_null, unique]
+      - name: shipping_fee
+      - name: logcost
+      - name: ship_cost
